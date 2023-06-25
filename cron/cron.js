@@ -19,6 +19,7 @@ export default async function handler(req, res) {
     );
     await updatePaymentStatus();
     await sendPaymentReminderMail();
+    res.status(200).end("Hello Cron!");
   } catch (err) {
     console.log(err);
   }
