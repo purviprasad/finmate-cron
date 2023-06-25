@@ -29,3 +29,4 @@ exports.cronService = () => {
     }
   );
 };
+cronService();
