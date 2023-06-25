@@ -12,11 +12,16 @@ exports.cronService = () => {
   cron.schedule(
     RECURRING_PAYMENT_CRON_SCHEDULE,
     async () => {
-      console.log(
-        "running a task every day to calculate new payment status" + new Date()
-      );
-      await updatePaymentStatus();
-      await sendPaymentReminderMail();
+      try {
+        console.log(
+          "running a task every day to calculate new payment status & send reminder emails" +
+            new Date()
+        );
+        await updatePaymentStatus();
+        await sendPaymentReminderMail();
+      } catch (err) {
+        console.log(err);
+      }
     },
     {
       scheduled: RECURRING_PAYMENT_CRON_START,

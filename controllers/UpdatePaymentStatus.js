@@ -37,11 +37,13 @@ exports.sendPaymentReminderMail = async () => {
             users[i].user_id
           );
 
-          let html = await htmlGenerator(bills);
-          let text = `Hi, You have ${bills.length} bills due. Please pay them on time to avoid any late fees. Regards, FinMate Team`;
-          let to = users[i].email;
-          let subject = "Payment Reminder Alert";
-          await sendMail(to, subject, text, html, users[i].user_id);
+          if (bills.length > 0) {
+            let html = await htmlGenerator(bills);
+            let text = `Hi, You have ${bills.length} bills due. Please pay them on time to avoid any late fees. Regards, FinMate Team`;
+            let to = users[i].email;
+            let subject = "Payment Reminder Alert";
+            await sendMail(to, subject, text, html, users[i].user_id);
+          }
         }
         offset += limit;
         users = await fetchUserDetails(connectionPromise, limit, offset);
