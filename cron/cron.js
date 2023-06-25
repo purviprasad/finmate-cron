@@ -8,7 +8,7 @@ const {
   updatePaymentStatus,
   sendPaymentReminderMail,
 } = require("../controllers/UpdatePaymentStatus");
-exports.cronService = async () => {
+export default async function handler(req, res) {
   // cron.schedule(
   //   RECURRING_PAYMENT_CRON_SCHEDULE,
   //   async () => {
@@ -28,5 +28,5 @@ exports.cronService = async () => {
   //   timezone: RECURRING_PAYMENT_CRON_TIMEZONE,
   // }
   // );
-};
-cronService();
+}
+// cronService();
