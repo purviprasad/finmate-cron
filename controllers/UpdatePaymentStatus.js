@@ -48,6 +48,7 @@ exports.sendPaymentReminderMail = async () => {
         offset += limit;
         users = await fetchUserDetails(connectionPromise, limit, offset);
       }
+      resolve();
     } catch (error) {
       reject(error);
     } finally {

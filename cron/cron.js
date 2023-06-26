@@ -1,14 +1,14 @@
-var cron = require("node-cron");
-const {
-  RECURRING_PAYMENT_CRON_SCHEDULE,
-  RECURRING_PAYMENT_CRON_START,
-  RECURRING_PAYMENT_CRON_TIMEZONE,
-} = require("../config/constants");
+// var cron = require("node-cron");
+// const {
+//   RECURRING_PAYMENT_CRON_SCHEDULE,
+//   RECURRING_PAYMENT_CRON_START,
+//   RECURRING_PAYMENT_CRON_TIMEZONE,
+// } = require("../config/constants");
 const {
   updatePaymentStatus,
   sendPaymentReminderMail,
 } = require("../controllers/UpdatePaymentStatus");
-export default async function handler(req, res) {
+exports.cronService = async (req, res) => {
   // cron.schedule(
   //   RECURRING_PAYMENT_CRON_SCHEDULE,
   //   async () => {
@@ -19,15 +19,20 @@ export default async function handler(req, res) {
     );
     await updatePaymentStatus();
     await sendPaymentReminderMail();
-    res.status(200).end("Hello Cron!");
+    res.status(200).json({
+      status: "SUCCESS",
+    });
   } catch (err) {
     console.log(err);
+    res.status(500).json({
+      status: "ERROR",
+      message: err ? err.message : "Something went wrong, Please try again!",
+    });
   }
-  // },
-  // {
-  //   scheduled: RECURRING_PAYMENT_CRON_START,
-  //   timezone: RECURRING_PAYMENT_CRON_TIMEZONE,
-  // }
-  // );
-}
-// cronService();
+  // }),
+  //   {
+  //     scheduled: RECURRING_PAYMENT_CRON_START,
+  //     timezone: RECURRING_PAYMENT_CRON_TIMEZONE,
+  //   };
+  //   );
+};
