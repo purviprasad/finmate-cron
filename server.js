@@ -2,6 +2,7 @@ const dotenv = require("dotenv");
 dotenv.config({ path: ".env" });
 const express = require("express");
 const { configRoutes } = require("./routes/routes");
+var path = require("path");
 // const cors = require("cors");
 // const cookieParser = require("cookie-parser");
 const app = express();
@@ -28,6 +29,7 @@ app.use((req, res, next) => {
 
 configRoutes(app);
 
+app.use(express.static(path.join(__dirname, "public")));
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log("Server started on port " + PORT);

@@ -8,6 +8,7 @@ const {
   updatePaymentStatus,
   sendPaymentReminderMail,
 } = require("../controllers/UpdatePaymentStatus");
+const { sendWelcomeEmail } = require("../controllers/SendMail");
 exports.cronService = async (req, res) => {
   // cron.schedule(
   //   RECURRING_PAYMENT_CRON_SCHEDULE,
@@ -35,4 +36,20 @@ exports.cronService = async (req, res) => {
   //     timezone: RECURRING_PAYMENT_CRON_TIMEZONE,
   //   };
   //   );
+};
+
+exports.welcomeEmailService = async (req, res) => {
+  try {
+    console.log("sending welcome email" + new Date());
+    await sendWelcomeEmail(req);
+    res.status(200).json({
+      status: "SUCCESS",
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      status: "ERROR",
+      message: err ? err.message : "Something went wrong, Please try again!",
+    });
+  }
 };
