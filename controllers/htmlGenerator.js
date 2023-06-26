@@ -712,7 +712,7 @@ exports.welcomeEmail = user => {
       
       <div class="u-row-container" style="padding: 0px;background-color: transparent">
         <div class="u-row" style="Margin: 0 auto;min-width: 320px;max-width: 600px;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;background-color: #7e8c8d;">
-          <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-image: url('${process.env.CRON_ORIGIN}/images/image-3.png');background-repeat: no-repeat;background-position: center top;background-color: transparent;">
+          <div style="border-collapse: collapse;display: table;width: 100%;height: 100%;background-image: url('${process.env.CRON_ORIGIN}/images/image-5.png');background-repeat: no-repeat;background-position: center top;background-color: transparent;">
             <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-image: url('${process.env.CRON_ORIGIN}/images/image-3.png');background-repeat: no-repeat;background-position: center top;background-color: #7e8c8d;"><![endif]-->
             
       <!--[if (mso)|(IE)]><td align="center" width="600" style="width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;" valign="top"><![endif]-->
@@ -1228,7 +1228,7 @@ exports.welcomeEmail = user => {
         <tr>
           <td class="v-text-align" style="padding-right: 0px;padding-left: 0px;" align="center">
             
-            <img align="center" border="0" src="${process.env.CRON_ORIGIN}/images/image-2.png" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 86%;max-width: 240.8px;" width="240.8" class="v-src-width v-src-max-width"/>
+            <img align="center" border="0" src="${process.env.CRON_ORIGIN}/images/image-3.png" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 86%;max-width: 240.8px;" width="240.8" class="v-src-width v-src-max-width"/>
             
           </td>
         </tr>
@@ -1351,7 +1351,7 @@ exports.welcomeEmail = user => {
         <tr>
           <td class="v-text-align" style="padding-right: 0px;padding-left: 0px;" align="center">
             
-            <img align="center" border="0" src="${process.env.CRON_ORIGIN}/images/image-5.png" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 600px;" width="600" class="v-src-width v-src-max-width"/>
+            <img align="center" border="0" src="${process.env.CRON_ORIGIN}/images/image-2.png" alt="Image" title="Image" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !important;border: none;height: auto;float: none;width: 100%;max-width: 600px;" width="600" class="v-src-width v-src-max-width"/>
             
           </td>
         </tr>
