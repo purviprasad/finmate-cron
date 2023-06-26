@@ -6,17 +6,8 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/server.js"
-    }
-  ],
   "crons": [{
     "path": "/cron/cron",
-    "schedule": "0 3 * * *"
+    "schedule": "46 9 * * *"
   }]
 }
